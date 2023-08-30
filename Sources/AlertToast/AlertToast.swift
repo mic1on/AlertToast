@@ -392,7 +392,11 @@ public struct AlertToast: View{
         case .alert:
             alert
         case .hud:
-            hud
+            VStack {
+                hud
+
+                Spacer()
+            }
         case .banner:
             banner
         }
