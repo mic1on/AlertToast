@@ -683,8 +683,8 @@ public extension View{
     ///   - alert: () -> AlertToast
     /// - Returns: `AlertToast`
     func toast(isPresenting: Binding<Bool>, duration: Double = 2, tapToDismiss: Bool = true, offsetY: CGFloat = 0, alert: @escaping () -> AlertToast, onTap: (() -> ())? = nil, completion: (() -> ())? = nil) -> some View{
-        // modifier(AlertToastModifier(isPresenting: isPresenting, duration: duration, tapToDismiss: tapToDismiss, offsetY: offsetY, alert: alert, onTap: onTap, completion: completion))
-        self.modifier(StableIdProvider(isPresented: isPresenting, otherContent: alert, mode: alert().displayMode, duration: duration, tapToDismiss: tapToDismiss, onTap: onTap, completion: completion, offsetY: offsetY))
+        modifier(AlertToastModifier(isPresenting: isPresenting, duration: duration, tapToDismiss: tapToDismiss, offsetY: offsetY, alert: alert, onTap: onTap, completion: completion))
+        // self.modifier(StableIdProvider(isPresented: isPresenting, otherContent: alert, mode: alert().displayMode, duration: duration, tapToDismiss: tapToDismiss, onTap: onTap, completion: completion, offsetY: offsetY))
     }
     
     /// Choose the alert background
